@@ -20,7 +20,7 @@ def load_kaggle_data():
         # Update this filename to match your downloaded Kaggle file
         import csv
 
-        # Try common Kaggle dataset filenames
+        # Try common Kaggle dataset filenames (Housing.csv first since user has it)
         possible_files = ['Housing.csv', 'house_data.csv', 'housing_prices.csv', 'sample_house_data.csv']
 
         for filename in possible_files:
@@ -32,6 +32,7 @@ def load_kaggle_data():
                     reader = csv.DictReader(file)
 
                     # Try to find area and price columns (case insensitive)
+                    # Note: Real Kaggle dataset has price as first column, area as second
                     area_col = None
                     price_col = None
 
